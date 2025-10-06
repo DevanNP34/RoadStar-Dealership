@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    display: flex; /* Make body a flex container */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    overflow: hidden; /* Prevent scrolling if elements get too big */
+    /* Background gradient to match the screenshot's greyish look */
+    background: linear-gradient(135deg, #e0e0e0, #a0a0a0);
+}
+
+.container {
+    background-color: rgba(90, 90, 90, 0.9); /* Changed to a lighter dark grey with 90% opacity */
+    padding: 80px 60px; /* FURTHER INCREASED padding for a much larger container */
+    border-radius: 20px; /* More rounded corners for a bigger look */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); /* Stronger, more prominent shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 550px; /* FURTHER INCREASED max-width for the container */
+    width: 90%; /* Responsive width */
+    text-align: center;
+}
+
+.logo {
+    height: 150px; /* FURTHER INCREASED logo size */
+    margin-bottom: 40px; /* Adjusted margin for more space */
+}
+
+.input-label {
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 20px; /* FURTHER INCREASED font size for labels */
+    font-weight: 400;
+    color: #eeeeee; /* Adjusted text color for better contrast on dark background */
+    margin-bottom: 10px; /* Adjusted margin */
+    align-self: flex-start; /* Align label to the left within the container */
+    letter-spacing: 1.5px; /* Slightly more letter spacing */
+}
+
+.input-field {
+    width: 100%;
+    padding: 20px 25px; /* FURTHER INCREASED padding for inputs */
+    margin-bottom: 30px; /* Adjusted margin */
+    border: 1px solid #999999; /* Adjusted border color for contrast */
+    border-radius: 10px; /* More rounded input fields */
+    font-size: 20px; /* FURTHER INCREASED font size for input text */
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    background-color: #f0f0f0; /* Slightly lighter background for input field */
+    color: #333; /* Adjusted text color for input field */
+}
+
+.input-field::placeholder {
+    color: #aaaaaa; /* Adjusted placeholder color */
+}
+
+.btn {
+    background-color: #c00; /* Changed to red as requested */
+    color: white;
+    padding: 22px 50px; /* FURTHER INCREASED padding for buttons */
+    border: none;
+    border-radius: 12px; /* More rounded buttons */
+    font-family: 'Righteous', cursive;
+    font-size: 28px; /* FURTHER INCREASED font size for button text */
+    cursor: pointer;
+    margin-top: 25px; /* Adjusted margin */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 3px; /* More letter spacing */
+    box-shadow: 0 7px 20px rgba(192, 0, 0, 0.4); /* Adjusted shadow to match red */
+}
+
+.btn:hover {
+    background-color: #a00; /* Changed to darker red on hover as requested */
+    transform: translateY(-3px); /* More pronounced lift on hover */
+}
+
+.divider {
+    width: 85%; /* Slightly wider divider line */
+    height: 2px; /* Thicker divider */
+    background-color: #999999; /* Adjusted divider color for contrast */
+    margin: 45px 0; /* Adjusted margin */
+}
+
+.signup-link {
+    font-size: 20px; /* FURTHER INCREASED font size for signup link */
+    color: #dddddd; /* Adjusted text color for better contrast */
+    margin-bottom: 20px; /* Adjusted margin */
+}
+
+.signup-btn {
+    background-color: #007BFF; /* Changed to blue as requested */
+    color: white;
+    padding: 20px 45px; /* FURTHER INCREASED padding */
+    border: none;
+    border-radius: 12px;
+    font-family: 'Righteous', cursive;
+    font-size: 26px; /* FURTHER INCREASED font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 3px;
+    box-shadow: 0 7px 20px rgba(0, 123, 255, 0.4); /* Adjusted shadow to match blue */
+}
+
+.signup-btn:hover {
+    background-color: #0056b3; /* Changed to darker blue on hover as requested */
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        padding: 50px 30px; /* Adjusted padding on small screens */
+        max-width: 95%; /* Allow container to take more width */
+    }
+
+    .logo {
+        height: 120px; /* Adjusted logo size on mobile */
+        margin-bottom: 30px;
+    }
+
+    .input-label {
+        font-size: 18px; /* Adjusted font on mobile */
+    }
+
+    .input-field {
+        padding: 15px 20px; /* Adjusted padding on mobile inputs */
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+
+    .btn, .signup-btn {
+        padding: 18px 30px; /* Adjusted padding for mobile buttons */
+        font-size: 22px; /* Adjusted font size for mobile buttons */
+        letter-spacing: 2px;
+    }
+
+    .divider {
+        margin: 30px 0;
+    }
+
+    .signup-link {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,282 @@
+:root {
+  --card-bg: white;
+  --text-color: #222;
+  --font-alt: 'Righteous', cursive;
+}
+
+html {
+  height: 100%; /* Ensure html takes full viewport height */
+  padding: 0; /* Remove any default padding on html */
+  margin: 0; /* Ensure no default margin on html */
+}
+
+body {
+  margin: 0;
+  padding: 0; /* Remove any default padding on body */
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  display: flex; /* Make body a flex container */
+  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #111;
+  color: white;
+}
+
+.logo-container img,
+.footer-logo {
+  height: 40px;
+}
+
+.search-container {
+  flex-grow: 1;
+  margin: 0 20px;
+  position: relative;
+}
+
+.search-input {
+  width: 90%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+}
+
+.user-icon img {
+  height: 35px;
+  border-radius: 50%;
+}
+
+.back-container {
+  margin: 20px;
+  align-self: flex-start; /* To align the back button to the left */
+}
+
+.back-btn {
+  text-decoration: none;
+  background-color: #555;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+/* Main Content Wrapper - Added to HTML to push footer down */
+.main-content-wrapper {
+  flex-grow: 1; /* This pushes the footer to the bottom */
+  display: flex; /* To center its content */
+  flex-direction: column; /* To stack its content vertically */
+  align-items: center; /* To horizontally center content within this wrapper */
+  padding: 20px; /* Added some general padding */
+  box-sizing: border-box; /* Include padding in element's total width/height */
+}
+
+.test-drive-header {
+  text-align: center;
+  margin-top: 20px; /* Increased space from back button */
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 8px; /* FURTHER INCREASED letter spacing for more impact */
+  max-width: 900px; /* INCREASED max-width to allow header to be wider */
+  width: 100%; /* Ensure it takes full width up to max-width */
+}
+
+.test-drive-header h1 {
+  font-size: 6rem; /* SIGNIFICANTLY INCREASED FONT SIZE */
+  margin: 0;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.test-drive-header .red-text {
+  color: red;
+}
+
+.test-drive-details-section { /* This is the div that wraps the form elements (from HTML update) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensure it takes full width of main-content-wrapper */
+    max-width: 900px; /* INCREASED max width of the form content */
+    margin-top: 40px; /* Increased space between main title and form section */
+}
+
+.test-drive-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 2.2rem; /* INCREASED FONT SIZE */
+  color: #3E3C39;
+  margin-top: 50px; /* Increased margin */
+  margin-bottom: 25px; /* Increased margin to separate from dropdowns */
+  letter-spacing: 5px; /* Adjusted letter spacing */
+  text-align: center;
+  max-width: 700px; /* Increased max-width for subtitle */
+  width: 100%;
+}
+
+.personal-info-header { /* Style for the Personal Information heading */
+    margin-top: 60px; /* More space before personal info section */
+    margin-bottom: 25px;
+    width: 100%; /* Ensure it spans the width */
+    max-width: 700px; /* Match width of dropdowns */
+    text-align: center;
+}
+
+.dropdown-title {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 300; /* Light */
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.72);
+  font-size: 20px; /* INCREASED FONT SIZE */
+  display: block;
+  margin: 25px 0 10px 0; /* Adjusted margins */
+  text-align: left;
+  letter-spacing: 6px; /* Adjusted letter spacing */
+  width: 100%; /* Ensure label takes full width */
+  max-width: 350px; /* Match dropdown width */
+}
+
+.dropdown-container {
+  width: 100%; /* Make it fill available width */
+  max-width: 700px; /* INCREASED overall dropdown section width */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.dropdown-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items within the group */
+    width: 100%; /* Allows dropdowns to use max-width */
+    margin-bottom: 20px; /* Increased vertical space between dropdowns */
+}
+
+.dropdown-select {
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 100; /* Thin */
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.72);
+  font-size: 18px; /* INCREASED FONT SIZE */
+  padding: 12px 18px; /* INCREASED PADDING */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Slightly more rounded */
+  width: 350px; /* INCREASED WIDTH */
+  max-width: 90%; /* Ensure responsiveness */
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dropdown-select option.dropdown-placeholder {
+  font-weight: 100; /* Thin */
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+input[type="date"]::placeholder {
+  font-weight: 100;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px; /* Increased margin */
+  margin-bottom: 80px; /* Increased margin */
+}
+
+.submit-btn {
+  background-color: #007BFF; /* same blue */
+  color: white;
+  font-family: 'Righteous', sans-serif;
+  font-weight: 600;
+  font-size: 22px; /* INCREASED FONT SIZE */
+  padding: 18px 50px; /* INCREASED PADDING */
+  border: none;
+  border-radius: 10px; /* Slightly more rounded */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  letter-spacing: 8px; /* Increased letter spacing */
+  box-shadow: 0 10px 25px rgba(0, 103, 215, 0.6); /* Stronger shadow */
+}
+
+.submit-btn:hover {
+  background-color: #0056b3; /* darker blue on hover */
+}
+
+.site-footer {
+  background-color: #222;
+  color: white;
+  padding: 10px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-copy {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .test-drive-header h1 {
+    font-size: 4.5rem; /* Adjusted for mobile */
+    letter-spacing: 5px;
+  }
+
+  .test-drive-details-section {
+    max-width: 95%; /* Allow it to take more width on mobile */
+    margin-top: 30px;
+  }
+
+  .test-drive-subtitle {
+    font-size: 1.8rem; /* Adjusted for mobile */
+    letter-spacing: 4px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .dropdown-title {
+    font-size: 18px; /* Adjusted for mobile */
+    margin-top: 20px;
+    margin-bottom: 8px;
+    max-width: 90%; /* Match dropdown select width */
+  }
+
+  .dropdown-select {
+    font-size: 16px; /* Adjusted for mobile */
+    padding: 10px 15px;
+    width: 100%; /* Take full width within its group */
+  }
+
+  .submit-container {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
+  .submit-btn {
+    font-size: 20px; /* Adjusted for mobile */
+    padding: 15px 40px;
+    letter-spacing: 6px;
+  }
+}

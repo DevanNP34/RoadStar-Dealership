@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore Page | RoadStar Dealership</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (for search icon) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="explore.css" />
+</head>
+<body>
+  <!-- REMOVE THE <div class="page-wrapper"> HERE -->
+    <header class="header">
+      <div class="logo-container">
+        <img src="../Assets/logo.png" alt="RoadStar Dealership" class="brand-logo" />
+      </div>
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search by name, brands, etc..." />
+        <i class="fas fa-search search-icon"></i>
+      </div>
+      <div class="user-icon">
+        <img src="../Assets/profile icon.png" alt="User" />
+      </div>
+    </header>
+
+    <!-- ADD THE main-content-wrapper HERE -->
+    <div class="main-content-wrapper">
+        <div class="back-container">
+            <a href="../Home_Page/homepage.html" class="back-btn">⬅ Back</a>
+        </div>
+
+        <div class="explore-header">
+            <div class="page-title">EXPLORE</div>
+            <select class="filter-dropdown" id="brand-filter">
+                <option value="">FILTER</option>
+                <option value="TOYOTA">TOYOTA</option>
+                <option value="HONDA">HONDA</option>
+                <option value="BMW">BMW</option>
+                <option value="MERCEDES BENZ">MERCEDES BENZ</option>
+                <option value="NISSAN">NISSAN</option>
+            </select>
+        </div>
+
+        <!-- ✅ GRID START -->
+        <div class="explore-grid">
+            <a href="../Toyota/toyota.html" class="explore-card">
+                <img src="../Assets/car logo 2.png" alt="Toyota" />
+                <p>TOYOTA</p>
+            </a>
+
+            <a href="../Honda/honda.html" class="explore-card">
+                <img src="../Assets/car logo 5.webp" alt="Honda" />
+                <p>HONDA</p>
+            </a>
+
+            <a href="../Bmw/bmw.html" class="explore-card">
+                <img src="../Assets/car logo1.png" alt="BMW" />
+                <p>BMW</p>
+            </a>
+
+            <a href="../Mercedes/mercedes.html" class="explore-card">
+                <img src="../Assets/car logo 7.png" alt="Mercedes" />
+                <p>MERCEDES BENZ</p>
+            </a>
+
+            <a href="../Nissan/nissan.html" class="explore-card">
+                <img src="../Assets/car logo 3.png" alt="Nissan" />
+                <p>NISSAN</p>
+            </a>
+        </div>
+        <!-- GRID END -->
+
+    </div> <!-- CLOSING TAG FOR main-content-wrapper -->
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="../Assets/logo.png" alt="Company Logo" class="footer-logo" />
+            </div>
+            <div class="footer-right">
+                <div class="footer-links">
+                    <a href="#">ABOUT US</a>
+                    <a href="#">CONTACT</a>
+                    <a href="#">PRIVACY POLICY</a>
+                    <a href="#">TERMS & CONDITION</a>
+                </div>
+                <p class="footer-copy">&copy; 2025 DreamCar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+  <script src="explore.js"></script>
+</body>
+</html>

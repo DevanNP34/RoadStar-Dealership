@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-In | Roadstar Dealership</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <img src="../Assets/logo.png" alt="Roadstar Dealership logo" class="logo">
+
+        <label class="input-label">Email Address...</label>
+        <input type="email" class="input-field" placeholder="Type here..." id="email">
+
+        <label class="input-label">Password...</label>
+        <input type="password" class="input-field" placeholder="Type here..." id="password">
+
+        <button class="btn" onclick="validateLogin()">LOG IN</button>
+
+        <div class="divider"></div>
+
+        <p class="signup-link">Don't have an account?</p>
+        <button class="btn signup-btn">SIGN UP</button>
+    </div>
+    
+    <script src="login.js"></script>
+</body>
+</html>

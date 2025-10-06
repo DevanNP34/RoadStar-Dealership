@@ -1,0 +1,224 @@
+:root {
+  --card-bg: white;
+  --text-color: #222;
+  --font-alt: 'Righteous', cursive;
+}
+
+html {
+  height: 100%; /* Ensure html takes full viewport height */
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  display: flex; /* Make body a flex container */
+  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #111;
+  color: white;
+}
+
+.logo-container img,
+.footer-logo {
+  height: 40px;
+}
+
+.search-container {
+  flex-grow: 1;
+  margin: 0 20px;
+  position: relative;
+}
+
+.search-input {
+  width: 90%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+}
+
+.user-icon img {
+  height: 35px;
+  border-radius: 50%;
+}
+
+.back-container {
+  margin: 20px;
+}
+
+.back-btn {
+  text-decoration: none;
+  background-color: #555;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+/* EXPLORE TITLE */
+.page-title {
+  font-size: 2.5rem;
+  font-family: var(--font-alt);
+  font-weight: 700;
+  color: var(--text-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: max-content;
+}
+
+/* FILTER + TITLE HEADER */
+.explore-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Main Content Wrapper (Add this div in your HTML to wrap everything between header and footer) */
+.main-content-wrapper {
+  flex-grow: 1; /* This pushes the footer to the bottom */
+  /* You can add padding/max-width to this wrapper if you want to center your content */
+}
+
+/* ✅ CARD GRID */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 280px);
+  gap: 80px 100px;
+  padding: 0 1rem 2rem;
+  justify-content: center;
+}
+
+/* ✅ Make last card span both columns */
+.explore-grid .explore-card:nth-child(5) {
+  grid-column: span 2;
+  justify-self: center;
+}
+
+/* INDIVIDUAL CARD */
+.explore-card {
+  width: 280px;
+  height: 320px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.explore-card:hover {
+  transform: translateY(-5px);
+}
+
+.explore-card img {
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.explore-card p {
+  margin-top: 0.8rem;
+  font-size: 35px;
+  font-weight: 600;
+  font-family: var(--font-alt);
+  color: var(--text-color);
+}
+
+.filter-dropdown {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  cursor: pointer;
+}
+
+.site-footer {
+  background-color: #222;
+  color: white;
+  padding: 30px;
+  /* flex-shrink: 0; This is default for flex items, but can be explicit if needed */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-copy {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .explore-grid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 30px; /* Reduced gap for mobile */
+    padding: 0 1rem; /* Consistent padding */
+  }
+
+  .explore-grid .explore-card:nth-child(5) {
+    grid-column: span 1; /* Reset span for last card on mobile */
+  }
+
+  .explore-card {
+    width: 100%; /* Take full width on mobile */
+    max-width: 300px; /* Max width to prevent it from getting too wide on tablets */
+    margin-left: auto; /* Center cards horizontally on mobile */
+    margin-right: auto;
+  }
+
+  .page-title {
+    font-size: 2rem; /* Smaller title on mobile */
+    width: auto; /* Allow title to wrap if needed */
+    text-align: center;
+  }
+
+  .explore-header {
+    flex-direction: column; /* Stack header items */
+    align-items: center; /* Center header items */
+    padding: 0 1rem;
+    margin-top: 1rem;
+  }
+
+  .filter-dropdown {
+    margin-top: 1rem; /* Space between title and dropdown */
+  }
+
+  .site-footer {
+    padding: 20px; /* Smaller padding on mobile footer */
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links {
+    margin-bottom: 10px;
+  }
+}
