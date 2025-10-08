@@ -1,0 +1,336 @@
+:root {
+  --card-bg: white;
+  --text-color: #222;
+  --font-alt: 'Rightious', cursive;
+}
+
+html {
+  height: 100%; /* Ensure html takes full viewport height */
+  padding: 0; /* Remove any default padding on html */
+  margin: 0; /* Ensure no default margin on html */
+}
+
+body {
+  margin: 0;
+  padding: 0; /* Remove any default padding on body */
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  display: flex; /* Make body a flex container */
+  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh; /* Ensure body takes at least full viewport height */
+  overflow-x: hidden; /* Prevent horizontal scroll if content overflows */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #111;
+  color: white;
+  width: 100%; /* Ensure header spans full width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.logo-container img,
+.footer-logo {
+  height: 40px;
+}
+
+.search-container {
+  flex-grow: 1;
+  margin: 0 20px;
+  position: relative;
+}
+
+.search-input {
+  width: 90%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+}
+
+.user-icon img {
+  height: 35px;
+  border-radius: 50%;
+}
+
+.back-container {
+  margin: 20px 0; /* Vertical margin only */
+  display: flex;
+  justify-content: flex-start; /* Aligns content (button) to the left */
+  width: 100%; /* Ensures it spans the full width relative to its parent */
+  box-sizing: border-box;
+  padding: 0 20px; /* ADDED: Padding to match the main-content-wrapper's default padding */
+  /* To make it truly flush left, it needs to escape the main-content-wrapper's max-width if desired,
+     or we make main-content-wrapper start from the left too.
+     For now, it aligns to the left of the main-content-wrapper's content area. */
+}
+
+.back-btn {
+  text-decoration: none;
+  background-color: #555;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+/* Main Content Wrapper - Crucial for sticky footer and overall layout */
+.main-content-wrapper {
+  flex-grow: 1; /* This pushes the footer to the bottom */
+  max-width: 1500px; /* Max width for overall content */
+  margin-left: auto; /* Centers the whole content block */
+  margin-right: auto; /* Centers the whole content block */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items within this wrapper */
+  box-sizing: border-box;
+  padding: 0 20px; /* General padding applied here for consistent inner spacing */
+  width: 100%; /* Ensure it takes full width of parent body up to max-width */
+}
+
+/* .toyota-page now becomes the central content block that needs internal layout */
+.toyota-page {
+  width: 100%; /* Ensure it spans the full width of main-content-wrapper */
+  box-sizing: border-box;
+  display: flex; /* Made toyota-page a flex container */
+  flex-direction: column; /* Stack its immediate children vertically */
+  align-items: center; /* Center its immediate children horizontally (brand-header, car-grid) */
+  position: relative; /* Needed for filter's absolute positioning relative to this */
+}
+
+.brand-header {
+  text-align: center; /* Centers logo/name */
+  position: relative; /* Keep relative for toyota-header absolute positioning */
+  margin: 40px 0 30px; /* Adjusted margin for better spacing */
+  width: 100%; /* Make brand-header span the full width of toyota-page */
+  box-sizing: border-box;
+}
+
+.brand-logo {
+  height: 100px; /* INCREASED LOGO SIZE */
+}
+
+.brand-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px; /* INCREASED FONT SIZE */
+  margin-top: 15px; /* Adjusted margin */
+  color: var(--text-color);
+}
+
+.toyota-header { /* This is the filter dropdown container, nested within brand-header */
+  position: absolute; /* Kept absolute */
+  top: 0; /* Keep top: 0 */
+  right: 20px; /* Positions 20px from right edge of brand-header (which is 100% width) */
+  z-index: 10; /* Ensures it's on top if overlapping */
+}
+
+.filter-dropdown {
+  padding: 8px 12px; /* Left unchanged as requested */
+  font-size: 14px; /* Left unchanged as requested */
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  cursor: pointer;
+}
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted minmax for bigger cards */
+  gap: 50px; /* Adjusted gap for bigger cards */
+  padding-bottom: 60px; /* Kept bottom padding for spacing before footer */
+  justify-items: center;
+  width: 100%; /* Full width of its parent (.toyota-page) */
+  box-sizing: border-box;
+}
+
+.car-card {
+  background-color: white;
+  padding: 25px; /* INCREASED PADDING for bigger cards */
+  text-align: center;
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Stronger shadow */
+  width: 100%; /* Make card fill its grid column */
+  max-width: 380px; /* INCREASED MAX-WIDTH for car cards */
+  height: 420px; /* INCREASED HEIGHT for car cards */
+  cursor: pointer;
+  display: flex; /* Make it a flex container to center content vertically */
+  flex-direction: column;
+  justify-content: space-between; /* Space out image and text/button */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added shadow to transition */
+}
+
+.car-card:hover {
+  transform: translateY(-8px); /* More pronounced lift */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Stronger shadow on hover */
+}
+
+.car-card img {
+  width: 100%;
+  height: 250px; /* INCREASED HEIGHT for images */
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.car-card h2 {
+  margin-top: 15px; /* Adjusted margin */
+  font-size: 28px; /* INCREASED FONT SIZE */
+  font-family: 'Poppins', sans-serif; /* Ensure font consistency */
+  font-weight: 600; /* Ensure font weight consistency */
+  color: var(--text-color); /* Ensure text color consistency */
+}
+
+.view-btn {
+  margin-top: 15px; /* Adjusted margin */
+  background-color: #c00; /* REVERTED to red */
+  color: white;
+  border: none;
+  padding: 12px 20px; /* INCREASED PADDING */
+  border-radius: 6px; /* More rounded */
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px; /* INCREASED FONT SIZE */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added shadow to transition */
+  box-shadow: 0 4px 10px rgba(192, 0, 0, 0.3); /* Adjusted shadow to match red color */
+}
+
+.view-btn:hover {
+  background-color: #a00; /* REVERTED to darker red on hover */
+  box-shadow: 0 6px 15px rgba(192, 0, 0, 0.4); /* Adjusted shadow to match red color on hover */
+}
+
+.site-footer {
+  background-color: #222;
+  color: white;
+  padding: 40px; /* INCREASED PADDING for a larger footer */
+  width: 100%; /* Ensure footer spans full width */
+  box-sizing: border-box; /* Include padding in width */
+  margin-top: auto; /* Pushes the footer to the bottom if main-content-wrapper is shorter than viewport */
+}
+
+.footer-container {
+  display: flex;
+  /* MODIFIED: Changed to space-between to push logo left and links/copy right */
+  justify-content: space-between;
+  align-items: center; /* Center items vertically within the footer */
+  flex-wrap: wrap;
+  max-width: 1200px; /* Align with main content max-width */
+  margin: 0 auto; /* Center footer content */
+  width: 100%; /* Ensure container takes full width up to max-width */
+}
+
+.footer-left {
+    display: flex; /* Make it a flex container */
+    align-items: center; /* Align logo vertically */
+}
+
+.footer-right {
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack links and copy vertically */
+    align-items: flex-end; /* Align links and copy to the right */
+    text-align: right; /* Ensure text aligns right if it wraps */
+}
+
+.footer-links {
+    margin-bottom: 5px; /* Space between links and copyright */
+}
+
+.footer-links a {
+  margin: 0 0 0 20px; /* Adjusted margin to push links to the right */
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-copy {
+  font-size: 14px;
+  margin-top: 0; /* Remove top margin as spacing is handled by footer-links margin-bottom */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .back-container {
+    padding: 0 1rem;
+  }
+
+  .brand-header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .brand-logo {
+    height: 80px;
+  }
+
+  .brand-name {
+    font-size: 38px;
+    margin-top: 10px;
+  }
+
+  .toyota-header {
+    right: 10px;
+  }
+
+  .car-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 30px;
+    padding: 0 1rem 30px;
+  }
+
+  .car-card {
+    width: 100%;
+    max-width: 320px; /* Adjusted max-width for mobile cards */
+    height: 380px; /* Adjusted height for mobile cards */
+    padding: 20px;
+  }
+
+  .car-card img {
+    height: 200px;
+  }
+
+  .car-card h2 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  .view-btn {
+    padding: 10px 18px;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .site-footer {
+    padding: 30px;
+  }
+
+  .footer-container {
+    flex-direction: column; /* Stack footer content vertically on mobile */
+    align-items: center; /* Center items on mobile */
+    text-align: center; /* Center text on mobile */
+  }
+
+  .footer-left,
+  .footer-right {
+      width: 100%; /* Take full width on mobile */
+      align-items: center; /* Center their content */
+      margin-bottom: 15px; /* Space between sections on mobile */
+  }
+
+  .footer-links {
+      display: flex; /* Make links row on mobile */
+      justify-content: center; /* Center links */
+      flex-wrap: wrap; /* Allow links to wrap */
+      margin-bottom: 8px; /* Space from copyright */
+  }
+
+  .footer-links a {
+    margin: 0 8px; /* Adjusted margin for mobile */
+    font-size: 13px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    margin-top: 0; /* No extra margin */
+  }
+}

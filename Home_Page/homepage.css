@@ -1,0 +1,459 @@
+:root {
+  --card-bg: white;
+  --text-color: #222;
+  --font-alt: 'Righteous', cursive;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #111;
+  color: white;
+}
+
+.logo-container img,
+.footer-logo {
+  height: 40px;
+}
+
+.search-container {
+  flex-grow: 1;
+  margin: 0 20px;
+  position: relative;
+}
+
+.search-input {
+  width: 90%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+}
+
+.user-icon img {
+  height: 35px;
+  border-radius: 50%;
+}
+
+.trailer-video {
+  /* This section remains centered with a max-width, good for videos */
+  margin: 20px auto 0 auto;
+  max-width: 960px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.video-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === Main Content Sections Centering & Balanced Placement === */
+/* Applying these styles to all main content sections to make them wider and centered effectively */
+.car-section,
+.model-view-section,
+.test-drive-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 80px; /* Increased margin for better separation */
+    max-width: 1400px; /* ADJUSTED: Set to a more balanced max-width for typical screens */
+    margin-left: auto; /* Ensures content remains centered */
+    margin-right: auto; /* Ensures content remains centered */
+    padding: 0 20px; /* Consistent padding on both sides for responsiveness */
+    box-sizing: border-box;
+}
+
+/* Specific margin-top adjustments for each section */
+.car-section {
+    margin-top: 80px;
+}
+
+.model-view-section {
+    margin-top: 120px; /* Kept original large margin for this section */
+}
+
+.test-drive-section {
+    margin-top: 60px;
+    margin-bottom: 80px; /* Space between test drive section and footer */
+}
+
+
+/* === Car Section Specifics === */
+.car-title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  color: #222;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: 5px;
+  margin-top: 0; /* FIXED: Removed negative margin for proper alignment */
+}
+
+.car-title .top-row {
+  display: flex;
+  align-items: baseline;
+}
+
+.car-title .top-row h1 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.car-title .top-row h1:first-child {
+  font-size: 3.8rem; /* Adjusted font size */
+}
+
+.car-title .top-row h1:last-child {
+  font-size: 2.8rem; /* Adjusted font size */
+  margin-left: 10px;
+}
+
+.car-title .bottom-row {
+  color: red;
+  margin-top: 5px;
+  font-size: 3.8rem; /* Adjusted font size */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  letter-spacing: 5px;
+}
+
+.car-description {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 13px; /* Adjusted font size */
+  letter-spacing: 3px;
+  color: #444;
+  margin-top: 2px;
+  line-height: 1.4;
+  max-width: 600px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.explore-btn {
+  font-family: 'Righteous', cursive;
+  font-size: 19px; /* Adjusted font size */
+  padding: 13px 29px; /* Adjusted padding */
+  margin-top: 15px;
+  background-color: #0067D7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  box-shadow: 0 6px 15px rgba(0, 103, 215, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  float: right;
+}
+
+.explore-btn:hover {
+  background-color: #0051aa;
+  box-shadow: 0 8px 20px rgba(0, 103, 215, 0.5);
+}
+
+.logo-carousel {
+  width: 100%;
+  overflow: hidden; /* This hides content outside the carousel */
+  margin-top: 30px;
+  position: relative;
+}
+
+.logo-track {
+  display: flex;
+  /* Instead of width: fit-content, we'll ensure it's wide enough by explicitly duplicating content in HTML */
+  animation: scrollLogos 30s linear infinite;
+}
+
+@keyframes scrollLogos {
+  /* This animation scrolls from left (0%) to further left (-50%) */
+  /* This assumes the HTML contains at least double the logos for a seamless loop */
+  0% {
+    transform: translateX(0%); /* Start at the left edge of the visible container */
+  }
+  100% {
+    transform: translateX(-100%); /* Scroll left by 50% of the track's full width */
+  }
+}
+
+.logo-item {
+  height: 200px;
+  margin: 0 30px;
+  opacity: 0.85;
+  transition: transform 0.3s ease;
+  /* To ensure logos are part of the `width: fit-content` calculation if used,
+     and to guarantee they contribute to the scroll distance */
+  flex-shrink: 0; /* Prevents logos from shrinking, maintaining their size */
+}
+
+.logo-item:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* === Model View Section Specifics === */
+.model-title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  color: #222;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: 5px;
+  margin-top: 0; /* FIXED: Removed negative margin for proper alignment */
+}
+
+.model-title .top-row {
+  display: flex;
+  align-items: baseline;
+}
+
+.model-title .top-row h1 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.model-title .top-row h1:first-child {
+  font-size: 3.8rem; /* Adjusted font size */
+}
+
+.model-title .top-row h1:last-child {
+  font-size: 2.8rem; /* Adjusted font size */
+  margin-left: 10px;
+}
+
+.model-title .bottom-row {
+  color: red;
+  margin-top: 5px;
+  font-size: 3.8rem; /* Adjusted font size */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  letter-spacing: 5px;
+}
+.car-image {
+  max-width: 100%;
+  width: 700px; /* Adjusted image width */
+  height: auto;
+}
+.model-view-description {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px; /* Adjusted font size */
+  letter-spacing: 3px;
+  color: #444;
+  max-width: 600px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.model-view-description p:first-child {
+  font-weight: 700;
+  font-size: 18px; /* Adjusted font size */
+  margin-bottom: 10px;
+  letter-spacing: 5px;
+}
+
+.try-btn {
+  font-family: 'Righteous', cursive;
+  font-size: 19px; /* Adjusted font size */
+  padding: 13px 29px; /* Adjusted padding */
+  margin-top: 15px;
+  background-color: #0067D7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  box-shadow: 0 6px 15px rgba(0, 103, 215, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  float: right;
+}
+
+.try-btn:hover {
+  background-color: #0051aa;
+  box-shadow: 0 8px 20px rgba(0, 103, 215, 0.5);
+}
+
+/* === Test Drive Section Specifics === */
+/* Combined with general section styling above */
+.test-drive-section img.car-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 350px;
+  border-radius: 8px;
+  object-fit: contain;
+  align-self: flex-start;
+  flex-shrink: 0;
+  width: 650px; /* Adjusted image width */
+}
+
+.test-drive-title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  color: #222;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: 5px;
+  margin-top: 0; /* FIXED: Removed negative margin for proper alignment */
+  flex: 1 1 300px;
+  min-width: 280px;
+  box-sizing: border-box;
+}
+
+.test-drive-title h1 {
+  font-size: 4.8rem; /* Adjusted font size */
+  margin: 0;
+}
+
+.test-drive-title h1 .test-red {
+  color: red;
+}
+
+.test-drive-description {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px; /* Adjusted font size */
+  letter-spacing: 3px;
+  color: #444;
+  max-width: 600px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.test-drive-description p:first-child {
+  font-weight: 700;
+  font-size: 18px; /* Adjusted font size */
+  margin-bottom: 10px;
+  letter-spacing: 5px;
+}
+
+.book-btn {
+  font-family: 'Righteous', cursive;
+  font-size: 19px; /* Adjusted font size */
+  padding: 13px 29px; /* Adjusted padding */
+  margin-top: 20px;
+  background-color: #0067D7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  box-shadow: 0 6px 15px rgba(0, 103, 215, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  float: right;
+}
+
+.book-btn:hover {
+  background-color: #0051aa;
+  box-shadow: 0 8px 20px rgba(0, 103, 215, 0.5);
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+    /* Apply flex-direction column to all main sections on mobile */
+    .car-section,
+    .model-view-section,
+    .test-drive-section {
+        flex-direction: column;
+        align-items: center; /* Center items when stacked vertically */
+        padding: 0 10px; /* Adjusted padding for smaller screens */
+        margin-top: 40px; /* Reduced top margin for mobile */
+    }
+
+    .test-drive-section {
+        margin-bottom: 60px; /* Adjusted space to footer for mobile */
+    }
+
+    .car-title,
+    .model-title,
+    .test-drive-title {
+        margin-top: 20px; /* Space from the image when stacked */
+        text-align: center;
+        flex: none;
+        width: 100%;
+    }
+
+    .car-title .top-row,
+    .model-title .top-row {
+        justify-content: center;
+    }
+
+    .car-title .bottom-row,
+    .model-title .bottom-row {
+        text-align: center;
+    }
+
+    .car-title .top-row h1:first-child,
+    .model-title .top-row h1:first-child {
+        font-size: 2.8rem; /* Adjusted for larger mobile display */
+    }
+
+    .car-title .top-row h1:last-child,
+    .model-title .top-row h1:last-child {
+        font-size: 2rem; /* Adjusted for larger mobile display */
+    }
+
+    .car-title .bottom-row,
+    .model-title .bottom-row {
+        font-size: 2.8rem; /* Adjusted for larger mobile display */
+    }
+
+    .car-description,
+    .model-view-description,
+    .test-drive-description {
+        max-width: 100%;
+        text-align: center;
+        font-size: 15px; /* Adjusted for larger mobile display */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .car-description p:first-child,
+    .model-view-description p:first-child,
+    .test-drive-description p:first-child {
+        font-size: 17px; /* Adjusted for larger mobile display */
+    }
+
+    /* Handle all buttons consistently on mobile */
+    .explore-btn,
+    .try-btn,
+    .book-btn {
+        font-size: 18px; /* Consistent font size for mobile buttons */
+        padding: 12px 28px; /* Consistent padding for mobile buttons */
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+}
+
+.site-footer {
+  background-color: #222;
+  color: white;
+  padding: 10px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-copy {
+  font-size: 12px;
+  margin-top: 10px;
+}
